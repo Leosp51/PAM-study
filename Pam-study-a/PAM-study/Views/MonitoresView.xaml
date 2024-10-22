@@ -12,21 +12,52 @@
         <CollectionView ItemsSource="{Binding Monitores}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Monitor">
-                    <VerticalStackLayout>
-                        <Image
-                            HeightRequest="50"
-                            Source="{Binding Foto}"/>
-                        <Label
-                            Text="{Binding Nome}"/>
-                        <Label
-                            Text="{Binding Whatsapp}"/>
-                        <Label
-                            Text="{Binding Email}"/>
-                        <Frame>
-                            <Label
-                                Text="{Binding Conteudo}"/>
-                        </Frame>
-                    </VerticalStackLayout>
+                    <Frame Margin="20"
+                           BorderColor="Red">
+                        <HorizontalStackLayout>
+                            <Frame
+                                BorderColor="Green"
+                                Margin="20">
+                                <Image
+                                    HeightRequest="50"
+                                    Source="{Binding Foto}"/>
+                                </Frame>
+                            <VerticalStackLayout
+                                Margin="20">
+                                
+                                <Label
+                                    Text="{Binding Nome}"
+                                    FontAttributes="Bold"
+                                    FontSize="40"
+                                    />
+                                <Frame
+                                    Margin="5"
+                                    BorderColor="Black">
+                                        <Label
+                                            Text="{Binding Conteudo}"
+                                            FontSize="20"/>
+
+                                 </Frame>
+                                <HorizontalStackLayout
+                                    Margin="5">
+                                    <Label
+                                        Text="Whatsapp: "
+                                        FontSize="25"
+                                        FontAttributes="Bold"/>
+                                    <Label
+                                        Text="{Binding Whatsapp}"/>
+
+                                    <Label
+                                        Text="E-mail: "
+                                        FontSize="25"
+                                        FontAttributes="Bold"/>
+                                    <Label
+                                        Text="{Binding Email}"/>
+                                </HorizontalStackLayout>  
+
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
