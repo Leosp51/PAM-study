@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PAM_study.Views.MonitoresView"
+             Title="MonitoresView"
+             xmlns:vm ="clr-namespace:PAM_study.ViewModels"
+             x:DataType="vm:MonitoresViewModel"
+             xmlns:models="clr-namespace:PAM_study.Models"
+             >
+    <VerticalStackLayout>
+        
+        <CollectionView ItemsSource="{Binding Monitores}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Monitor">
+                    <VerticalStackLayout>
+                        <Image
+                            HeightRequest="50"
+                            Source="{Binding Foto}"/>
+                        <Label
+                            Text="{Binding Nome}"/>
+                        <Label
+                            Text="{Binding Whatsapp}"/>
+                        <Label
+                            Text="{Binding Email}"/>
+                        <Frame>
+                            <Label
+                                Text="{Binding Conteudo}"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
